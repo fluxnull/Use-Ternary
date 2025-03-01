@@ -1,8 +1,10 @@
 # Use-Ternary
+
   A PowerShell function that emulates a ternary operator (`condition ? trueValue : falseValue`) in PowerShell 5.0. It simplifies conditional expressions, improving readability while maintaining efficiency.
 
 ## 📌 Usage
-  Use-Ternary` allows for inline conditional expressions, making scripts cleaner and more concise.
+
+  Use-Ternary allows for inline conditional expressions, making scripts cleaner and more concise.
 
 **Basic Conditional Assignment:** Performs a simple conditional check and assigns a value.
 
