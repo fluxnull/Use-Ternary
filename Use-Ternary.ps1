@@ -29,7 +29,7 @@ function Use-Ternary {
         Returns "Null Detected" if $var is `$null`, otherwise returns "Value Exists".
 
     .NOTES
-        Version: 1.0.1
+        Version: 1.0.4
         Author: David Wingerson
         Optimized for PowerShell 5.0+ and 7.0+
         Uses .NET direct execution for maximum speed.
@@ -51,9 +51,10 @@ function Use-Ternary {
     )
 
     process {
-        $Map = New-Object 'System.Collections.Generic.Dictionary[bool, object]'
-        $Map.Add($true, $TrueValue)
-        $Map.Add($false, $FalseValue)
+        # Use .NET Dictionary constructor directly
+        $Map = [System.Collections.Generic.Dictionary[bool, object]]::new(2)
+        $Map[$true] = $TrueValue
+        $Map[$false] = $FalseValue
 
         return $Map[$Condition]
     }
